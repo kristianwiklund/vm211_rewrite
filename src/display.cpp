@@ -45,7 +45,7 @@ void setup_display() {
 
   id = tft.readID();
   
-  Serial.print("DISPLAY: type (should be 9341) ");
+  Serial.print("DISPLAY: type (should end with 9341) ");
   Serial.println(id, HEX);
 
   tft.begin(id);

@@ -51,6 +51,10 @@ The included VMA342 contains two devices, both connected through I2C, one CCS811
 * If a ds1307 has been added, it is accessed through I2C, address 0x68. 
 * It seems like Velleman ("Whadda" nowadays) are selling ds1302:s to add to the device, I do not have any of those and my fork does not support them. It shouldn't be too complicated, have a look at [Bert Lindeman's pull request to the main repo](https://github.com/Velleman/VM211_Firmware/pull/7/commits/f1e41ab82534fed6aa6ba8c7d96e238750d0af6c) for details.
 
+## Buzzer
+
+Piezo buzzer connected to A10.
+
 
 
 

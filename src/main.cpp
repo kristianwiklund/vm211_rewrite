@@ -4,6 +4,8 @@
 #include "user.h"
 #include "network.h"
 #include "display.h"
+#include "clock.h"
+#include "log.h"
 
 void setup() {
 
@@ -18,10 +20,35 @@ void setup() {
   
   setup_wifi();
   setup_mqtt();
+
+  // time
   setup_ntp();
+  setup_clock();
   
+  // sensors
+
+  logger("main","Configuration done, yielding to loop");
+  tft.fillScreen(TFT_BLACK);
 }
+
+ClockScreen clockscreen;
 
 void loop() {
 
+#ifdef WITH_ESP01
+  // mqtt
+  if (wifienabled) {
+    client.loop();
+    if (!client.connected())
+      mqtt_reconnect();
+  }
+#endif
+
+  // MVP: show only the clock screen because that is the only thing that we have implemented...
+
+  clockscreen.draw();
+  
+
+  
+  
 }
