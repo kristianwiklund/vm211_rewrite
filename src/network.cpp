@@ -22,6 +22,7 @@
 //
 
 #include "user.h"
+#include "log.h"
 
 #ifdef WITH_ESP01
 
@@ -78,10 +79,10 @@ void mqtt_callback(char *topic, unsigned char *payload, unsigned int length) {
 
 void mqtt_reconnect() {
   // Loop until we're reconnected
-  Serial.print("= MQTT: Attempting connection...");
+  logger("MQTT","Attempting connection...");
   // Attempt to connect
   if (client.connect("arduinoClient")) {
-    Serial.println("= MQTT: connected");
+    logger("MQTT","connected");
     // Once connected, publish an announcement...
     client.publish("vm211/status", "online");
     // ... and resubscribe
@@ -89,7 +90,7 @@ void mqtt_reconnect() {
   } else {
     Serial.print("= MQTT: failed, rc=");
     Serial.print(client.state());
-    Serial.println("= MQTT: try again in 5 seconds (that code is missing?)");
+    logger("MQTT","try again in 5 seconds (that code is missing?)");
     // Wait 5 seconds before retrying
   }
 }
@@ -114,15 +115,15 @@ void i2mqtt(const char *t, int v) {
 
 void setup_wifi() {
 
-  Serial.println("= WIFI: Starting config");
+  logger("WIFI","Starting config");
   // Start by connecting to the ESP module
 
   Serial3.begin(115200);
   WiFi.init(Serial3);
 
   if (WiFi.status() == WL_NO_MODULE) {
-    Serial.println("= WIFI: Communication with WiFi module failed!");
-    Serial.println("= WIFI: If you have a WiFi module - are you sure that it is "
+    logger("WIFI","Communication with WiFi module failed!");
+    logger("WIFI","If you have a WiFi module - are you sure that it is "
                    "powered correctly?");
     // don't continue
     wifienabled = false;
@@ -131,7 +132,7 @@ void setup_wifi() {
 
   // waiting for connection to Wifi network set with the SetupWiFiConnection
   // sketch
-  Serial.println("= WIFI: Waiting for connection to WiFi");
+  logger("WIFI","Waiting for connection to WiFi");
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.print('.');
