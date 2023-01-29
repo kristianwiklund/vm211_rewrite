@@ -1,0 +1,24 @@
+#ifndef USER_H
+#define USER_H
+
+// to get started, copy user.h.dist to user.h
+// contains "user-tunable" settings + credentials and the likes
+// in this file, you put things you do not want to risk being pushed to github
+
+
+// time zone and daylight savings settings
+#define CLOCK_DST_RULE                                                         \
+  { "EDT", Last, Sun, Mar, 3, 120 } // UTC + 2 hours in summer
+#define CLOCK_STD_RULE                                                         \
+  { "EST", Last, Sun, Oct, 2, 60 } // UTC + 1 hour in winter
+
+// MQTT host
+#define MQTT_HOST "10.168.0.194"
+
+// position - for weather forecast reasons
+// to save you the time it takes to look this up - it is in the middle of
+// Arlanda airport, Sweden
+#define LAT "59.642929"
+#define LON "17.939554"
+
+#endif
