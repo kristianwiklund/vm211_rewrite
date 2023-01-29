@@ -9,7 +9,7 @@
 // clock settings
 
 #define CLOCK_X 160   // center x
-#define CLOCK_Y 130   // center y
+#define CLOCK_Y 100   // center y
 #define CLOCK_R 60    // radius
 #define CLOCK_CR 2    // centre blob radius
 #define CLOCK_H_LEN 4 // length of hour marks
