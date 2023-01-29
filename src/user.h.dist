@@ -1,6 +1,12 @@
 #ifndef USER_H
 #define USER_H
 
+// define this if you have an ESP01 attached
+// #define WITH_ESP01
+
+// uncomment and change "localhost" to an ntp pool in your area - see https://www.ntppool.org/en/use.html for details
+// #define NTP_HOST "localhost"
+
 // to get started, copy user.h.dist to user.h
 // contains "user-tunable" settings + credentials and the likes
 // in this file, you put things you do not want to risk being pushed to github
