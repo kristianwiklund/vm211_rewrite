@@ -6,6 +6,7 @@
 #include "display.h"
 #include "clock.h"
 #include "log.h"
+#include "weather.h"
 
 void setup() {
 
@@ -28,7 +29,11 @@ void setup() {
   // sensors
 
   logger("main","Configuration done, yielding to loop");
+  disable_screen_log();
+  
   tft.fillScreen(TFT_BLACK);
+
+  update_weather();
 }
 
 ClockScreen clockscreen;

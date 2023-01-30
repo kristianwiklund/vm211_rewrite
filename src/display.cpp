@@ -48,12 +48,20 @@ void setup_display() {
   Serial.print("DISPLAY: type (should end with 9341) ");
   Serial.println(id, HEX);
 
+  
   tft.begin(id);
   
   // green is good
   tft.fillScreen(TFT_GREEN);
   tft.setRotation(1);
 
+  Serial.print("DISPLAY: width =");
+  Serial.println(tft.width());
+
+  Serial.print("DISPLAY: height =");
+  Serial.println(tft.height());
+
+  
   // set up the display to work as console during the rest of the boot process
 
   enable_screen_log();

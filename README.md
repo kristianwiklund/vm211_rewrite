@@ -13,3 +13,8 @@ I haven't had the sensors connected for quite some time, those ended up in anoth
 * Slim down the code a lot, remove the reliance to the touch screen, and display as much as possible around the clock.
 * Configuration shall be done in files instead of in user interfaces (those that are able to rebuild with this code have no problem doing so)
 * Get the weather forecast in to the device and display it at the bottom of the screen.
+
+# Font Credits
+
+Meteocons font by Alessio Atzeni is used to display symbols
+Freely available from - https://www.alessioatzeni.com/meteocons/
