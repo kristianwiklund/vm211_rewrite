@@ -7,6 +7,7 @@
 #include "clock.h"
 #include "log.h"
 #include "weather.h"
+#include "postnord.h"
 
 void setup() {
 
@@ -34,6 +35,10 @@ void setup() {
   tft.fillScreen(TFT_BLACK);
 
   update_weather();
+
+#ifdef ZIPCODE
+  update_postnord();
+#endif
 }
 
 ClockScreen clockscreen;

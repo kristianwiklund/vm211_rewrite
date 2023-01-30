@@ -27,4 +27,10 @@
 #define LAT "59.642929"
 #define LON "17.939554"
 
+// unimplemented because SSL, but leaving it in place in case I pick it up later
+// zip code, for use with the "will I get mail today" function for postnord
+// undefine and set the zip if you want to enable this
+
+// #define ZIPCODE "41452"
+
 #endif

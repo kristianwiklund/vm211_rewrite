@@ -114,7 +114,8 @@ void i2mqtt(const char *t, int v) {
 }
 
 void setup_wifi() {
-
+  char ver[10];
+  
   logger("WIFI","Starting config");
   // Start by connecting to the ESP module
 
@@ -130,6 +131,13 @@ void setup_wifi() {
     return;
   }
 
+  
+  
+  if (WiFi.firmwareVersion(ver)) {
+    logger("WIFI","AT firmware version");
+    logger("WIFI", ver);
+  }
+  
   // waiting for connection to Wifi network set with the SetupWiFiConnection
   // sketch
   logger("WIFI","Waiting for connection to WiFi");
